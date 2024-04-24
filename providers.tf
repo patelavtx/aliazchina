@@ -34,8 +34,7 @@ provider "aviatrix" {
 
 provider "alicloud" {
   alias = "china"
-  region = var.aliregion
-  #region = "cn-hangzhou"
+  region = "cn-hangzhou"
   # region = "cn-beijing"
   #skip_region_validation = "true"
   # Error: Invalid Alibaba Cloud region: acs-cn-beijing. You can skip checking this region by setting provider parameter 'skip_region_validation'
