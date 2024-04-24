@@ -20,7 +20,7 @@ variable "cloud" {
     condition     = contains(["aws", "azure", "oci", "ali", "gcp"], lower(var.cloud))
     error_message = "Invalid cloud type. Choose AWS, Azure, GCP, ALI or OCI."
   }
-  default = "100"
+  default = "Azure"
 }
 
 variable "cidr" {
