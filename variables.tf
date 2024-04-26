@@ -233,3 +233,27 @@ variable "ali_global_region" {
     description = "Alibaba Global Cloud Region Name"
     default = "acs-eu-central-1"
 }
+
+variable "ali_global_asn" {
+    type = string
+    description = "Alibaba Global Cloud Region Name"
+    default = "65040"
+}
+
+variable "apipa1" {
+  description = "Provide CSR vNet address space"
+  default = "169.254.31.201/30"
+}
+
+
+variable "apipa2" {
+  description = "Provide CSR vNet address space"
+  default = "169.254.32.202/30"
+}
+
+locals {
+  ali_gbl_apipa1 = cidrhost(var.apipa1,1)
+  ali_gbl_apipa2 = cidrhost(var.apipa2,1)
+  ali_cn_apipa1 = cidrhost(var.apipa1,2)
+  ali_cn_apipa2 = cidrhost(var.apipa2,2)
+ }
