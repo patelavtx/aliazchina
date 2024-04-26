@@ -88,7 +88,7 @@ module "mc-transit" {
 # https://registry.terraform.io/providers/AviatrixSystems/aviatrix/latest/docs/resources/aviatrix_transit_gateway_peering
 resource "aviatrix_transit_gateway_peering" "cn_az_ali_peering" {
   transit_gateway_name1                       = module.mc-transit.transit_gateway.gw_name
-  transit_gateway_name2                       = module-mc-transit-ali.transit_gateway.gw_name
+  transit_gateway_name2                       = module.mc-transit-ali.transit_gateway.gw_name
   enable_peering_over_private_network         = false
   enable_insane_mode_encryption_over_internet = false
 }
