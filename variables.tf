@@ -200,20 +200,10 @@ variable "aliregion" {
 }
 
 
-variable "alilocalasn" {
+variable "ali_cn_asn" {
   description = "Set internal BGP ASN"
   type        = string
   default = "65004"
-}
-
-
-variable "alitags" {
-  description = "Map of tags to assign to the gateway."
-  type        = map(string)
-  default = {
-      ProjectName        = "CN test"
-      BusinessOwnerEmail = "nobody@test.com"
-    }
 }
 
 

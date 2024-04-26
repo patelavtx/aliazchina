@@ -1,6 +1,6 @@
 
 
-# STEP1 - ALI CHINA
+# STEP1 - ALI CHINA 
 module "ali-gateway-nsg" {
   providers = {
     alicloud.china     = alicloud.china               # key = configuration_alias;  value = provider declaration
@@ -22,7 +22,7 @@ module "mc-transit-ali" {
   account             = var.aliaccount
   cloud               = var.alicloud
   region              = var.aliregion
-  local_as_number     = var.alilocalasn
+  local_as_number     = var.ali_cn_asn
   allocate_new_eip    = true
   az_support          = false
   enable_segmentation = true
@@ -31,6 +31,10 @@ module "mc-transit-ali" {
   cidr                = var.alicidr
   ha_gw               = var.ha_enabled
 }
+
+
+
+
 
 
 # STEP2 - Azure Transit China
@@ -45,10 +49,7 @@ module "transit-gateway-nsg" {
   use_existing_resource_group = false                      # Optional. Defaults to false. Whether to create a new resource group or use an existing one
   gateway_name                = var.gateway_name           # Required. This is used to derive the name for the Public IP addresses that will be used by the Aviatrix Gateway
   gateway_region              = "China East"               # Required. Azure China Region where the Aviatrix Gateways will be deployed
-  tags = {                                                 # Optional. These tags are only for the public IP addresses that will be created. In addition to the specified tags here the following tags are added {avx-gw-association = format("%s-gw", var.gateway_name), avx-created-resource = "DO-NOT-DELETE"} 
-    user        = "atul",
-    environment = "azcn"
-  }
+  tags = var.tags
   ha_enabled                         = var.ha_enabled                         # Optional. Defaults to true. If set to false only one Public IP address is created and must disable ha_gw when creating Aviatrix spoke or transit gateways              
   controller_nsg_name                = var.controller_nsg_name                # Required. Name of the NSG associated with the Aviatrix Controller
   controller_nsg_resource_group_name = var.controller_nsg_resource_group_name # Required. Name of the resource group where the NSG associated with the Aviatrix Controller is deployed
@@ -105,10 +106,7 @@ module "spoke-gateway-nsg" {
   use_existing_resource_group                 = false                        # Optional. Defaults to false. Whether to create a new resource group or use an existing one
   gateway_name                                = var.spokegateway_name                     # Required. This is used to derive the name for the Public IP addresses that will be used by the Aviatrix Gateway
   gateway_region                              = var.region                   # Required. Azure China Region where the Aviatrix Gateways will be deployed
-  tags                = {                                                         # Optional. These tags are only for the public IP addresses that will be created. In addition to the specified tags here the following tags are added {avx-gw-association = format("%s-gw", var.gateway_name), avx-created-resource = "DO-NOT-DELETE"} 
-                          user = "atul",
-                          environment = "azcn"
-                        }
+  tags                = var.tags
   ha_enabled                                  = var.spokeha_enabled                        # Optional. Defaults to true. If set to false only one Public IP address is created and must disable ha_gw when creating Aviatrix spoke or transit gateways              
   controller_nsg_name                         = var.controller_nsg_name                   # Required. Name of the NSG associated with the Aviatrix Controller
   controller_nsg_resource_group_name          = var.controller_nsg_resource_group_name                # Required. Name of the resource group where the NSG associated with the Aviatrix Controller is deployed
