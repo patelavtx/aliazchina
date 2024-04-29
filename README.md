@@ -60,52 +60,20 @@ on linux_amd64 (WSL) and TFC workspace
 
 ```
 
-## providers.tf
-```
-
-# AZ
-provider azurerm {
-    environment = "china"
-    skip_provider_registration = "true"
-
-    features {}
-}
-
-provider azurerm {
-    alias = "gateways"
-    environment = "china"
-    skip_provider_registration = "true"
-    features {}
-}
 
 
-#AVTX
-provider azurerm {
-    alias = "controller"
-    environment = "china"
-    skip_provider_registration = "true"
-    features {}
-}
+## China ENV VARS to set
 
+**ALI**
+export ALICLOUD_REGION=cn-hangzhou
+export ALICLOUD_SECRET_KEY=
+export ALICLOUD_ACCESS_KEY=
 
-provider "aviatrix" {
-  controller_ip           = var.controller_ip
-  username                = "admin"
-  password                = var.ctrl_password
+**AZURE**
+export ARM_CLIENT_ID=
+export ARM_TENANT_ID=
+export ARM_CLIENT_SECRET=
+export ARM_SUBSCRIPTION_ID=
+export ARM_ENDPOINT=https://management.chinacloudapi.cn
+export ARM_ENVIRONMENT=china
 
-}
-
-# ALI
-provider "alicloud" {
-  alias = "china"
-  region = "cn-hangzhou"
-  # region = "cn-beijing"
-  #skip_region_validation = "true"
-}
-
-provider "alicloud" {
-  alias = "global"
-  #region = var.ali_global_region
-  region = "eu-central-1"
-}
-```
