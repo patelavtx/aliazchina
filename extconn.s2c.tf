@@ -24,6 +24,7 @@ resource "aviatrix_transit_external_device_conn" "to_aliglobal" {
 }
 */
 
+/*
 # Opt2 - Test with remote gateway configured
 resource "aviatrix_transit_external_device_conn" "to_aliglobal" {
   #  vpcid and transit gateway variable values can be found via the transit gateway output
@@ -47,8 +48,9 @@ resource "aviatrix_transit_external_device_conn" "to_aliglobal" {
   #backup_local_tunnel_cidr  = "169.254.21.206/30, 169.254.22.206/30"
   #backup_remote_tunnel_cidr = "169.254.21.205/30, 169.254.22.205/30"
 }
+*/
 
-/*
+
 # Opt3a - Test with vpc peering using private ips
 #Note/.  Issue with accessing vpc peering on ALI, need to chase G.Lam.
 resource "aviatrix_transit_external_device_conn" "to_aliglobal" {
@@ -66,7 +68,7 @@ resource "aviatrix_transit_external_device_conn" "to_aliglobal" {
   local_tunnel_cidr         = "${local.ali_cn_apipa1}/30, ${local.ali_cn_apipa2}/30"
   remote_tunnel_cidr        = "${local.ali_gbl_apipa1}/30, ${local.ali_gbl_apipa2}/30"
 }
-*/
+
 
 
 
