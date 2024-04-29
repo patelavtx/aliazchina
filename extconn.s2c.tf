@@ -61,7 +61,7 @@ resource "aviatrix_transit_external_device_conn" "to_aliglobal" {
   tunnel_protocol           = "IPsec"
   bgp_local_as_num          = var.ali_cn_asn
   bgp_remote_as_num         = var.ali_global_asn
-  remote_gateway_ip         = "10.40.28.26, 10.40.28.27"
+  remote_gateway_ip         = "10.40.28.6, 10.40.28.27"
   phase1_local_identifier    = "private_ip"
   pre_shared_key            = "Aviatrix123#"
   enable_ikev2              = "false"
