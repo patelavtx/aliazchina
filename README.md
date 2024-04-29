@@ -26,6 +26,8 @@ There are a few options on connecting to China:
 ## Terraform code description
 
 Summary of the *tf files, the code itself has some additional comments
+- Variables.tf has most variables set to some 'default'
+- See '####
 
 
 **TF files**
@@ -69,6 +71,7 @@ export ALICLOUD_REGION=cn-hangzhou
 export ALICLOUD_SECRET_KEY=
 export ALICLOUD_ACCESS_KEY=
 
+
 **AZURE**
 export ARM_CLIENT_ID=
 export ARM_TENANT_ID=
@@ -77,3 +80,17 @@ export ARM_SUBSCRIPTION_ID=
 export ARM_ENDPOINT=https://management.chinacloudapi.cn
 export ARM_ENVIRONMENT=china
 
+
+## Example of terraform TFVARS
+
+- Variables.tf has most defaults set for easy, check the settings.
+- The following variables were added to *tfvars
+
+  - aliregion
+  - controller_ip
+  - controller_nsg_name
+  - controller_nsg_resource_group_name
+  - ctrl_password
+  - gateway_name
+  - spokegateway_name
+  - transit_gw
