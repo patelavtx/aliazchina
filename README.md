@@ -45,7 +45,7 @@ Summary of the *tf files, the code itself has some additional comments
   - Azure Test Linux VM
 
 
- ![#c5f015](https://placehold.co/15x15/orange/white) `'extconn.s2c.tf' `        
+ ![#c5f015](https://placehold.co/15x15/c5f015/c5f015.png) `'extconn.s2c.tf' `        
 
  - Provides opt1-opt3, setup for opt3
  - Since 'ALi Transit Global transit' private ips are not known, will need to update and re-apply Terraform after initial run
