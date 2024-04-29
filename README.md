@@ -67,18 +67,32 @@ on linux_amd64 (WSL) and TFC workspace
 ## China ENV VARS to set
 
 **ALI**
+
+```
 export ALICLOUD_REGION=cn-hangzhou
+
 export ALICLOUD_SECRET_KEY=
+
 export ALICLOUD_ACCESS_KEY=
+```
 
 
 **AZURE**
+
+```
 export ARM_CLIENT_ID=
+
 export ARM_TENANT_ID=
+
 export ARM_CLIENT_SECRET=
+
 export ARM_SUBSCRIPTION_ID=
+
+
 export ARM_ENDPOINT=https://management.chinacloudapi.cn
+
 export ARM_ENVIRONMENT=china
+```
 
 
 ## Example of terraform TFVARS
