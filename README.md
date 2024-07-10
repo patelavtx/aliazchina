@@ -1,6 +1,7 @@
 # ALIAZCHINA
 
 Example of Aviatrix China deployment;  can be used in conjuction with repo 'ALIAZGLOBAL' to facilitate 'end to end' setup for testing.
+Recommended procedure is to deploy ALIAZCHINA first then ALIAZGLOBAL
 
 
 
